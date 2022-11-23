@@ -7,9 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Repositories\" />
-    <Folder Include="Queries\" />
     <Folder Include="Context\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Deal.Health.Integration.Domain\Deal.Health.Integration.Domain.csproj" />
   </ItemGroup>
 
 </Project>

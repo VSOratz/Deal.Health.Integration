@@ -15,4 +15,8 @@
     <Folder Include="Authorization\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Deal.Health.Integration.Domain\Deal.Health.Integration.Domain.csproj" />
+  </ItemGroup>
+
 </Project>
