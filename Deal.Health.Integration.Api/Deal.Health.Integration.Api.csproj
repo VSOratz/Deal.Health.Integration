@@ -17,6 +17,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Deal.Health.Integration.Domain\Deal.Health.Integration.Domain.csproj" />
+    <ProjectReference Include="..\Deal.Health.Integration.Infra.Data\Deal.Health.Integration.Infra.Data.csproj" />
   </ItemGroup>
 
 </Project>
