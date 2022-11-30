@@ -1,6 +1,8 @@
+using Deal.Health.Integration.Domain.Commands.Inputs.Paciente;
 using Deal.Health.Integration.Domain.Handlers;
 using Deal.Health.Integration.Domain.Repositories;
 using Microsoft.AspNetCore.Mvc;
+using MvcContrib.PortableAreas;
 
 namespace Deal.Health.Integration.Api.Controllers
 {
@@ -21,6 +23,12 @@ namespace Deal.Health.Integration.Api.Controllers
         public async Task<IActionResult> ListarAsync()
         {
             return Ok(await repository.ListarAsync());
+        }
+        [HttpPost]
+        public async Task<ICommandResult> PostAsync([FromBody] SalvarPacienteCommand command)
+        {
+            var retorno = await handler.HandleAsync(command);
+            return retorno;
         }
     }
 }

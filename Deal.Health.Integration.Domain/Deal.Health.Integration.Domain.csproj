@@ -7,11 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Commands\Outputs\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Flunt" Version="2.0.5" />
+    <PackageReference Include="MvcContrib" Version="2.0.95" />
   </ItemGroup>
 
 </Project>
