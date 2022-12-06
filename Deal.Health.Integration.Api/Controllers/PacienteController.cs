@@ -24,11 +24,30 @@ namespace Deal.Health.Integration.Api.Controllers
         {
             return Ok(await repository.ListarAsync());
         }
+
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetAsync(int id) =>
+          Ok(await repository.ObterEntidadeAsync(id));
+
         [HttpPost]
         public async Task<ICommandResult> PostAsync([FromBody] SalvarPacienteCommand command)
         {
             var retorno = await handler.HandleAsync(command);
             return retorno;
+        }
+
+        [HttpPatch]
+        public async Task<ICommandResult> PatchAsync([FromBody] AtualizarPacienteCommand command)
+        {
+            var retorno = await handler.HandleAsync(command);
+            return retorno;
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<ICommandResult> Delete(int id)
+        {
+            var command = new ApagarPacienteCommand() { Id = id };
+            return await handler.HandleAsync(command);
         }
     }
 }

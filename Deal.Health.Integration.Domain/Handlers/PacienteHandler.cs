@@ -50,5 +50,52 @@ namespace Deal.Health.Integration.Domain.Handlers
 
             return new DealHealthCommandResult(true, "Paciente cadastrado com sucesso!", null);
         }
+
+        public async Task<ICommandResult> HandleAsync(AtualizarPacienteCommand command)
+        {
+            if (!command.EhValido())
+            {
+                AddNotifications(command.Notifications);
+                return new DealHealthCommandResult(false, "Problema no cadastro do paciente!", Notifications);
+            }
+
+            var altPaciente = new Paciente(
+                command.Id,
+                command.Nome,
+                command.CPF,
+                command.Telefone,
+                command.Email,
+                command.Sexo,
+                command.DataNascimento,
+                command.EstadoCivil,
+                command.Profissao,
+                command.NrSUS,
+                command.Endereco,
+                command.Cidade,
+                command.CEP,
+                command.UF);
+
+            await repository.AtualizarAsync(altPaciente);
+
+            return new DealHealthCommandResult(true, "Paciente cadastrado com sucesso!", null);
+        }
+
+        public async Task<ICommandResult> HandleAsync(ApagarPacienteCommand command)
+        {
+            if (!command.EhValido() || command == null)
+            {
+                AddNotifications(command.Notifications);
+                return new DealHealthCommandResult(false, "Problema para desativar o cadastro do paciente!", Notifications);
+            }
+
+            var paciente = await repository.ObterEntidadeAsync(command.Id);
+
+            if (paciente == null) return new DealHealthCommandResult(false, "Cadastro do paciente não encontrado!", Notifications);
+
+            await repository.DeletarAsync(command.Id);
+
+            return new DealHealthCommandResult(true, "Paciente desativado com sucesso!", null);
+        }
+
     }
 }
