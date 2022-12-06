@@ -24,8 +24,8 @@ namespace Deal.Health.Integration.Domain.Entities
         public string CEP { get; set; }
         public string UF { get; set; }
         public DateTime DataHoraCriacao { get; set; }
-        public DateTime DataHoraModificacao { get; set; }
-        public DateTime DataHoraExclusao { get; set; }
+        public DateTime? DataHoraModificacao { get; set; }
+        public DateTime? DataHoraExclusao { get; set; }
 
         public Paciente(int id, string nome, string cPF, string telefone, string email, string sexo, DateTime dataNascimento, string estadoCivil, string profissao, int nrSUS, string endereco, string cidade, string cEP, string uF)
         {

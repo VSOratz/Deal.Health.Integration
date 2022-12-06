@@ -9,12 +9,9 @@ using System.Threading.Tasks;
 
 namespace Deal.Health.Integration.Domain.Repositories
 {
-    public interface IPacienteRepository
+    public interface IAlergiaRepository
     {
-        Task<IEnumerable<PacienteQueryResult>> ListarAsync();
-        Task<int> SalvarAsync(Paciente paciente);
-        Task<int> AtualizarAsync(Paciente paciente);
-        Task DeletarAsync(int id);
-        Task<Paciente> ObterEntidadeAsync(int id);
+        Task<IEnumerable<AlergiaQueryResult>> ListarAsync();
+        Task<Alergia> ObterEntidadeAsync(int id);
     }
 }

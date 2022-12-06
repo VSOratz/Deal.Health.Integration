@@ -1,7 +1,12 @@
-﻿namespace Deal.Health.Integration.Domain.Queries.Paciente
+﻿using Deal.Health.Integration.Domain.Commands.Contracts.Paciente;
+using Flunt.Notifications;
+
+namespace Deal.Health.Integration.Domain.Commands.Inputs.Paciente
 {
-    public class PacienteQueryResult
+    public class AtualizarPacienteCommand : Notifiable<Notification>
     {
+        public AtualizarPacienteCommand()
+        { }
         public int Id { get; set; }
         public string Nome { get; set; }
         public string CPF { get; set; }
@@ -18,9 +23,10 @@
         public string CEP { get; set; }
         public string UF { get; set; }
 
-        public DateTime DataHoraCriacao { get; set; }
-        public DateTime? DataHoraModificacao { get; set; }
-        public DateTime? DataHoraExclusao { get; set; }
-
+        public bool EhValido()
+        {
+            AddNotifications(new AtualizarPacienteContracts(this));
+            return IsValid;
+        }
     }
 }

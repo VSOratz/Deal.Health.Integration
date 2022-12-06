@@ -59,5 +59,38 @@
                                       @DataHoraCriacao,
                                       @DataHoraModificacao);
                       SELECT LAST_INSERT_ID();";
+
+
+        public const string ATUALIZAR =
+        @"UPDATE paciente
+                SET 
+                    Nome = @Nome,
+	                CPF = @CPF,
+	                Telefone = @Telefone,
+	                Email = @Email,
+	                Sexo = @Sexo,
+	                DataNascimento = @DataNascimento,
+	                EstadoCivil = @EstadoCivil,
+	                Profissao = @Profissao,
+	                NrSUS = @NrSUS,
+	                Endereco = @Endereco,
+	                Cidade = @Cidade,
+	                CEP = @CEP,
+	                UF = @UF,
+	                DataHoraModificacao = @DataHoraModificacao
+                WHERE Id = @Id;";
+
+        public const string OBTER =
+        @" 
+            SELECT
+                *              
+			FROM Paciente
+            WHERE id = @Id
+            AND c.DataHoraExclusao is null;";
+
+        public const string DELETAR =
+        @"UPDATE Paciente
+                SET DataHoraExclusao = @DataExclusao
+                WHERE Id = @Id;";
     }
 }
