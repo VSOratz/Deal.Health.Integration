@@ -5,12 +5,12 @@ namespace Deal.Health.Integration.Api.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class AlergiaController : ControllerBase
+    public class ExameController : ControllerBase
     {
-        // private readonly AlergiaHandler handler;
-        private readonly IAlergiaRepository repository;
+        // private readonly CirurgiaHandler handler;
+        private readonly IExameRepository repository;
 
-        public AlergiaController(IAlergiaRepository repository)
+        public ExameController(IExameRepository repository)
         {
             //this.handler = handler;
             this.repository = repository;

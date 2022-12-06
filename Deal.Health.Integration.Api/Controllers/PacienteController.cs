@@ -29,6 +29,10 @@ namespace Deal.Health.Integration.Api.Controllers
         public async Task<IActionResult> GetAsync(int id) =>
           Ok(await repository.ObterEntidadeAsync(id));
 
+        [HttpGet("cpf/{cpf}")]
+        public async Task<IActionResult> GetCpfAsync(string cpf) =>
+          Ok(await repository.ObterEntidadeAsync(cpf));
+
         [HttpPost]
         public async Task<ICommandResult> PostAsync([FromBody] SalvarPacienteCommand command)
         {

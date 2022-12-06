@@ -15,6 +15,12 @@ builder.Services.AddScoped<PacienteHandler>();
 builder.Services.AddScoped<IAlergiaRepository, AlergiaRepository>();
 builder.Services.AddScoped<AlergiaHandler>();
 
+builder.Services.AddScoped<IExameRepository, ExameRepository>();
+builder.Services.AddScoped<ExameHandler>();
+
+builder.Services.AddScoped<ICirurgiaRepository, CirurgiaRepository>();
+builder.Services.AddScoped<CirurgiaHandler>();
+
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

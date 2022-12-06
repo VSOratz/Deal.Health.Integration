@@ -16,5 +16,6 @@ namespace Deal.Health.Integration.Domain.Repositories
         Task<int> AtualizarAsync(Paciente paciente);
         Task DeletarAsync(int id);
         Task<Paciente> ObterEntidadeAsync(int id);
+        Task<Paciente> ObterEntidadeAsync(string cpf);
     }
 }
