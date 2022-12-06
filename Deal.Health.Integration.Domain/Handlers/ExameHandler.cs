@@ -3,10 +3,10 @@ using Flunt.Notifications;
 
 namespace Deal.Health.Integration.Domain.Handlers
 {
-    public class AlergiaHandler : Notifiable<Notification>
+    public class ExameHandler : Notifiable<Notification>
     {
-        private readonly IAlergiaRepository repository;
-        public AlergiaHandler(IAlergiaRepository repository)
+        private readonly IExameRepository repository;
+        public ExameHandler(IExameRepository repository)
         {
             this.repository = repository;
         }

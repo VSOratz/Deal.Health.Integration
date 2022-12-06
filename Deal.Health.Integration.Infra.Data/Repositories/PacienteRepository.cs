@@ -75,6 +75,14 @@ namespace Deal.Health.Integration.Infra.Data.Repositories
             return retorno;
         }
 
+        public async Task<Paciente> ObterEntidadeAsync(string cpf)
+        {
+            cpf = cpf.Replace(".", "");
+            param.Add("@cpf", cpf);
+            var retorno = await _context.Connection.QueryFirstOrDefaultAsync<Paciente>(PacienteQueries.OBTER_CPF, param);
+            return retorno;
+        }
+
         public async Task DeletarAsync(int id)
         {
             param.Add("@Id", id);

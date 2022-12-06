@@ -30,6 +30,8 @@ namespace Deal.Health.Integration.Domain.Handlers
                 return new DealHealthCommandResult(false, "Problema no cadastro do paciente!", Notifications);
             }
 
+            command.CPF = command.CPF.Replace(".", "");
+
             var salvarPaciente = new Paciente(
                 0,
                 command.Nome,

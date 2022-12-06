@@ -86,7 +86,31 @@
                 *              
 			FROM Paciente
             WHERE id = @Id
-            AND c.DataHoraExclusao is null;";
+            AND DataHoraExclusao is null;";
+
+        public const string OBTER_CPF =
+        @" 
+            SELECT
+                Id,
+                Nome,
+                CPF,
+                Telefone,
+                Email,
+                Sexo,
+                DataNascimento,
+                EstadoCivil,
+                Profissao,
+                NrSUS,
+                Endereco,
+                Cidade,
+                CEP,
+                UF,
+                DataHoraCriacao,
+                DataHoraModificacao,
+                DataHoraExclusao            
+			FROM Paciente
+            WHERE CPF like '%@cpf%'
+            AND DataHoraExclusao is null;";
 
         public const string DELETAR =
         @"UPDATE Paciente
