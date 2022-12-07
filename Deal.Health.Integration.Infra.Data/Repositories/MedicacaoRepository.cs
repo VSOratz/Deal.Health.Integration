@@ -7,27 +7,27 @@ using Deal.Health.Integration.Domain.Queries;
 
 namespace Deal.Health.Integration.Infra.Data.Repositories
 {
-    public class AlergiaRepository : IAlergiaRepository
+    public class MedicacaoRepository : IMedicacaoRepository
     {
         private readonly DbContext _context;
         private readonly DynamicParameters param;
 
-        public AlergiaRepository(DbContext context)
+        public MedicacaoRepository(DbContext context)
         {
             _context = context;
             this.param = new DynamicParameters();
         }
 
-        public async Task<IEnumerable<AlergiaQueryResult>> ListarAsync()
+        public async Task<IEnumerable<MedicacaoQueryResult>> ListarAsync()
         {
-            var response = await _context.Connection.QueryAsync<AlergiaQueryResult>(AlergiaQueries.LISTAR);
+            var response = await _context.Connection.QueryAsync<MedicacaoQueryResult>(MedicacaoQueries.LISTAR);
             return response;
         }
         
-        public async Task<Alergia> ObterEntidadeAsync(int id)
+        public async Task<Medicacao> ObterEntidadeAsync(int id)
         {
             param.Add("@Id", id);
-            var retorno = await _context.Connection.QueryFirstOrDefaultAsync<Alergia>(AlergiaQueries.OBTER, param);
+            var retorno = await _context.Connection.QueryFirstOrDefaultAsync<Medicacao>(MedicacaoQueries.OBTER, param);
             return retorno;
         }
     }

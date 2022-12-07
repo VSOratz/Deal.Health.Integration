@@ -3,9 +3,9 @@ using Deal.Health.Integration.Domain.Queries;
 
 namespace Deal.Health.Integration.Domain.Repositories
 {
-    public interface IAlergiaRepository
+    public interface IColaboradorRepository
     {
-        Task<IEnumerable<AlergiaQueryResult>> ListarAsync();
-        Task<Alergia> ObterEntidadeAsync(int id);
+        Task<IEnumerable<ColaboradorQueryResult>> ListarAsync();
+        Task<Colaborador> ObterEntidadeAsync(int id);
     }
 }

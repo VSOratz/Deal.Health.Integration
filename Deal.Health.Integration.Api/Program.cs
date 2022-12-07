@@ -21,6 +21,18 @@ builder.Services.AddScoped<ExameHandler>();
 builder.Services.AddScoped<ICirurgiaRepository, CirurgiaRepository>();
 builder.Services.AddScoped<CirurgiaHandler>();
 
+builder.Services.AddScoped<IInstituicaoRepository, InstituicaoRepository>();
+builder.Services.AddScoped<InstituicaoHandler>();
+
+builder.Services.AddScoped<IColaboradorRepository, ColaboradorRepository>();
+builder.Services.AddScoped<ColaboradorHandler>();
+
+builder.Services.AddScoped<IDoencaRepository, DoencaRepository>();
+builder.Services.AddScoped<DoencaHandler>();
+
+builder.Services.AddScoped<IMedicacaoRepository, MedicacaoRepository>();
+builder.Services.AddScoped<MedicacaoHandler>();
+
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

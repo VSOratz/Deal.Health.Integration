@@ -1,4 +1,4 @@
-﻿namespace Deal.Health.Integration.Domain.Queries.Cirurgia
+﻿namespace Deal.Health.Integration.Domain.Queries
 {
     public class CirurgiaQueryResult
     {
