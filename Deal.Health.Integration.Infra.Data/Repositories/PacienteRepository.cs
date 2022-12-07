@@ -1,10 +1,9 @@
-﻿using Deal.Health.Integration.Domain.Queries.Paciente;
-using Deal.Health.Integration.Domain.Repositories;
+﻿using Deal.Health.Integration.Domain.Repositories;
 using Deal.Health.Integration.Infra.Data.Context;
 using Dapper;
 using Deal.Health.Integration.Infra.Data.Queries;
 using Deal.Health.Integration.Domain.Entities;
-using Deal.Health.Integration.Domain.Queries.Alergia;
+using Deal.Health.Integration.Domain.Queries;
 
 namespace Deal.Health.Integration.Infra.Data.Repositories
 {

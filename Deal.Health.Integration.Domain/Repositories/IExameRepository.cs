@@ -1,6 +1,5 @@
 ﻿using Deal.Health.Integration.Domain.Entities;
-using Deal.Health.Integration.Domain.Queries.Cirurgia;
-using Deal.Health.Integration.Domain.Queries.Exame;
+using Deal.Health.Integration.Domain.Queries;
 
 namespace Deal.Health.Integration.Domain.Repositories
 {

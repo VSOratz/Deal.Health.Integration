@@ -1,4 +1,4 @@
-﻿namespace Deal.Health.Integration.Domain.Queries.Alergia
+﻿namespace Deal.Health.Integration.Domain.Queries
 {
     public class AlergiaQueryResult
     {

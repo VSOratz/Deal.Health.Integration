@@ -1,6 +1,6 @@
 ﻿namespace Deal.Health.Integration.Domain.Queries
 {
-    public class ExameQueryResult
+    public class MedicacaoQueryResult
     {
         public int Id { get; set; }
         public string Descricao { get; set; }
